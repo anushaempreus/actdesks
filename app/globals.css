@@ -50,3 +50,18 @@
     @apply list-disc pl-6 mb-6 space-y-2;
   }
 }
+
+/* Scroll-reveal transitions (driven by components/ScrollReveal.tsx).
+   Kept OUTSIDE @layer so these rules beat Tailwind's layered base styles,
+   and only active when the user hasn't requested reduced motion. */
+@media (prefers-reduced-motion: no-preference) {
+  .reveal-init {
+    opacity: 0;
+    transform: translateY(28px);
+  }
+  .reveal-init.reveal-in {
+    opacity: 1;
+    transform: none;
+    transition: opacity 0.7s ease-out, transform 0.7s ease-out;
+  }
+}
