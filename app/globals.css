@@ -1,0 +1,52 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    @apply font-body text-body text-[18px] leading-[27px] bg-white;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-heading text-brand-navy;
+  }
+}
+
+@layer components {
+  .container-x {
+    @apply mx-auto w-full max-w-container px-5 md:px-8;
+  }
+  /* Primary dark button */
+  .btn {
+    @apply inline-block bg-brand-button text-white font-body font-medium
+           px-8 py-4 uppercase tracking-wide text-sm transition-colors
+           hover:bg-brand-orange;
+  }
+  /* Orange button variant */
+  .btn-orange {
+    @apply inline-block bg-brand-orange text-white font-body font-medium
+           px-8 py-4 uppercase tracking-wide text-sm transition-colors
+           hover:bg-brand-button;
+  }
+  /* Eyebrow label above section titles */
+  .eyebrow {
+    @apply font-heading uppercase tracking-[3px] text-brand-orange font-semibold text-sm mb-3;
+  }
+  .section {
+    @apply py-16 md:py-24;
+  }
+  .prose-content p {
+    @apply mb-5;
+  }
+  .prose-content h2 {
+    @apply text-3xl md:text-4xl font-medium mt-10 mb-4;
+  }
+  .prose-content h3 {
+    @apply text-2xl font-heading font-semibold mt-8 mb-3 text-brand-navy;
+  }
+  .prose-content ul {
+    @apply list-disc pl-6 mb-6 space-y-2;
+  }
+}
