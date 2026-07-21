@@ -40,20 +40,33 @@ export default async function ProjectPage({
 
   return (
     <>
-      {/* Hero */}
-      <section className="relative h-[360px] md:h-[520px] flex items-end">
+      {/* Hero — full-screen */}
+      <section className="relative min-h-[100svh] flex items-center justify-center overflow-hidden">
         <Image src={project.image} alt={project.name} fill priority className="object-cover" sizes="100vw" />
-        <div className="absolute inset-0 bg-gradient-to-t from-brand-navy/90 via-brand-navy/40 to-transparent" />
-        <div className="container-x relative text-white pb-12">
-          <p className="text-sm uppercase tracking-[2px] text-brand-orange font-semibold mb-2">
+        <div className="absolute inset-0 bg-brand-navy/55" />
+        <div className="container-x relative text-white text-center">
+          <p className="text-sm md:text-base uppercase tracking-[3px] text-brand-orange font-semibold mb-4">
             {project.categories}
           </p>
-          <h1 className="font-heading font-bold text-4xl md:text-6xl text-white">{project.name}</h1>
+          <h1 className="font-heading font-bold text-5xl md:text-7xl lg:text-8xl text-white leading-none">
+            {project.name}
+          </h1>
         </div>
+        {/* Scroll cue */}
+        <a
+          href="#project-info"
+          aria-label="Scroll to project details"
+          className="absolute bottom-8 left-1/2 -translate-x-1/2 text-white/80 hover:text-white transition-colors animate-bounce"
+        >
+          <svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+            <path d="M12 5v14" />
+            <path d="m19 12-7 7-7-7" />
+          </svg>
+        </a>
       </section>
 
       {/* Project Information — big image beside the text */}
-      <section className="section">
+      <section id="project-info" className="section scroll-mt-24">
         <div className="container-x grid gap-10 lg:gap-12 lg:grid-cols-2 items-stretch">
           <div className="relative aspect-[4/3] lg:aspect-auto lg:h-full lg:min-h-[420px] overflow-hidden shadow-xl">
             <Image src={gallery[0]} alt={project.name} fill className="object-cover" sizes="(max-width:1024px) 100vw, 50vw" />

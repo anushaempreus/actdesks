@@ -65,7 +65,7 @@ export default function Home() {
   return (
     <>
       {/* Hero — background video */}
-      <section className="relative min-h-[560px] md:min-h-[700px] flex items-center overflow-hidden">
+      <section className="relative min-h-[100svh] flex items-center overflow-hidden">
         <video
           className="absolute inset-0 w-full h-full object-cover"
           autoPlay
