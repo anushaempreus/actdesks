@@ -69,9 +69,12 @@ export default function Footer() {
       </div>
 
       <div className="border-t border-white/10">
-        <div className="container-x py-5 text-xs text-white/60 flex flex-col md:flex-row justify-between gap-2">
+        <div className="container-x py-5 text-xs text-white/60 flex flex-col md:flex-row justify-between items-center gap-2">
           <span>Copyright © {new Date().getFullYear()} ACT Decks. All rights reserved.</span>
-          <span>ACT Builder Licence: {company.licence}</span>
+          <div className="flex flex-col sm:flex-row items-center gap-2 sm:gap-5 text-center">
+            <span>ACT Builder Licence: {company.licence}</span>
+            <span>Managed by Empreus IT Support</span>
+          </div>
         </div>
       </div>
     </footer>
